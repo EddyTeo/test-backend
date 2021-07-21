@@ -4,11 +4,12 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-url = 'https://ades-test-backend.herokuapp.com/';
 app.use(function (req, res) {
     return res.sendStatus(200);
 });
 
-app.listen(url, function () {
-    console.log('Sample Hosting app listening on port 8000');
+const port = process.env.PORT || 8000
+
+app.listen(port, function () {
+    console.log('Sample Hosting app listening on port' + port);
 });
